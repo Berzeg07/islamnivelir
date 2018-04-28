@@ -40,4 +40,14 @@ span {
 .clear {
   clear: both; }
 
-/*# sourceMappingURL=style.css.map */
+  h1{
+    font-family: 'Roboto-Black';
+    font-family: 'Roboto-Slab-Regular';
+    font-family: 'Roboto-Italic';
+    font-family: 'RobotoSlab-Bold';
+    font-family: 'RobotoCondensedBold-Italic';
+    font-family: 'RobotoCondensedLight-Italic';
+    font-family: 'RobotoMedium';
+    font-family: 'RobotoSlabLight';
+  }
+
