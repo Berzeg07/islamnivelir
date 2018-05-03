@@ -35,10 +35,13 @@ body {
 	background-size: cover;
 }
 
-*{
-	-moz-box-sizing: border-box; /* Для Firefox */
-    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
-    box-sizing: border-box; /* Для IE и Opera */
+* {
+	-moz-box-sizing: border-box;
+	/* Для Firefox */
+	-webkit-box-sizing: border-box;
+	/* Для Safari и Chrome */
+	box-sizing: border-box;
+	/* Для IE и Opera */
 }
 
 /* header-top */
@@ -86,6 +89,13 @@ body {
 	width: 25px;
 	height: 25px;
 	background: url(../img/burger.png) no-repeat;
+}
+
+.sidebar_burger{
+	width: 25px;
+	height: 25px;
+	background: url(../img/burger.png) no-repeat;
+	cursor: pointer;
 }
 
 @media only screen and (min-width:768px) {
@@ -289,9 +299,14 @@ body {
 }
 
 /* content */
+
+.content_title{
+	display: flex;
+	justify-content: space-between;
+}
+
 .content-wrap {
 	margin-top: 170px;
-	padding-top: 40px;
 	position: relative;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -314,12 +329,14 @@ body {
 	right: 0;
 }
 
-.content{
+.content {
 	max-width: 815px;
+	margin: 0 auto;
 }
 
 @media only screen and (min-width:992px) {
 	.content-wrap {
+		padding-top: 40px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -343,30 +360,30 @@ body {
 	line-height: 24px;
 }
 
-.video_wrap{
+.video_wrap {
 	margin-bottom: 40px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-.video_main{
+.video_main {
 	max-width: 587px;
 	width: 100%;
 }
 
-.video_min{
+.video_min {
 	max-width: 217px;
 	display: none;
 }
 
-@media only screen and (min-width:768px){
-	.video_min{
+@media only screen and (min-width:768px) {
+	.video_min {
 		display: block;
 	}
 }
 
-.articles a{
+.articles a {
 	text-decoration: none;
 }
 
@@ -378,12 +395,13 @@ body {
 	margin-bottom: 20px;
 }
 
-@media only screen and (min-width:768px){
-	.articles ul{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+.articles ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+@media only screen and (min-width:768px) {
 	.articles ul li {
 		padding: 44px 30px 50px 159px;
 		font-size: 36px;
@@ -402,11 +420,11 @@ body {
 	background-size: cover;
 }
 
-.articles ul li:nth-child(1) p:first-child{
+.articles ul li:nth-child(1) p:first-child {
 	color: #660066;
 }
 
-.articles ul li:nth-child(1) p:last-child{
+.articles ul li:nth-child(1) p:last-child {
 	color: white;
 }
 
@@ -415,11 +433,11 @@ body {
 	background-size: cover;
 }
 
-.articles ul li:nth-child(2) p:first-child{
+.articles ul li:nth-child(2) p:first-child {
 	color: #993300;
 }
 
-.articles ul li:nth-child(2) p:last-child{
+.articles ul li:nth-child(2) p:last-child {
 	color: #333333;
 }
 
@@ -428,11 +446,11 @@ body {
 	background-size: cover;
 }
 
-.articles ul li:nth-child(3) p:first-child{
+.articles ul li:nth-child(3) p:first-child {
 	color: #5072fd;
 }
 
-.articles ul li:nth-child(3) p:last-child{
+.articles ul li:nth-child(3) p:last-child {
 	color: #333333;
 }
 
@@ -441,13 +459,36 @@ body {
 	background-size: cover;
 }
 
-.articles ul li:nth-child(4) p{
+.articles ul li:nth-child(4) p {
 	color: white;
 }
 
 /* sidebar */
+
 .sidebar {
 	max-width: 285px;
+	width: 100%;
+	position: relative;
+}
+
+.sidebar h2 {
+	display: none;
+}
+
+.sidebar_banner {
+	display: none;
+}
+
+@media only screen and (min-width:1207px) {
+	.sidebar h2 {
+		display: block;
+	}
+	.sidebar_banner {
+		display: block;
+	}
+	.sidebar_burger{
+		display: none;
+	}
 }
 
 h2, h1 {
@@ -458,13 +499,33 @@ h2, h1 {
 }
 
 .sidebar_nav {
-	background: #f2f2f2;
+	position: absolute;
+	background: rgba(242, 242, 242, 0.9);
 	border-radius: 10px;
 	margin-bottom: 45px;
+	overflow: hidden;
+	top: 46px;
+	left: -9999px;
+	transition:0.5s;
+}
+
+@media only screen and (min-width:1207px) {
+	.sidebar_nav {
+		position: unset;
+		background: rgba(242, 242, 242, 1);
+	}
+}
+
+.side-show{
+	left: 0;
 }
 
 .sidebar_nav li {
 	border-bottom: 1px solid white;
+}
+
+.sidebar_nav li:last-child {
+	border-bottom: none;
 }
 
 .sidebar_nav a {
@@ -472,7 +533,7 @@ h2, h1 {
 	color: #999999;
 	font-family: 'RobotoMedium';
 	display: block;
-	padding: 20px 0px 20px 18px;
+	padding: 20px 10px 20px 18px;
 	text-decoration: none;
 	transition: 0.5s;
 }
@@ -491,15 +552,16 @@ h2, h1 {
 }
 
 /* footer */
-footer{
+
+footer {
 	padding: 23px 0px 30px;
 }
 
-footer p{
+footer p {
 	color: #000000;
 	font-size: 14px;
 }
 
-footer p span{
+footer p span {
 	color: #6bcbe6;
 }

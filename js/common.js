@@ -16,6 +16,21 @@ $(document).ready(function(){
             if ($(event.target).closest(".burger").length) return;
 			$('.main-nav ul').removeClass('nav-show');
 			event.stopPropagation();
+        });
+        
+        function sidebar_burger() {
+			$('.sidebar_nav').toggleClass('side-show');
+		};
+
+		$('.sidebar_burger').click(function() {
+			sidebar_burger();
+		});
+
+		$(document).click(function(event) {
+            if ($(event.target).closest(".sidebar_nav").length) return;
+            if ($(event.target).closest(".sidebar_burger").length) return;
+			$('.sidebar_nav').removeClass('side-show');
+			event.stopPropagation();
 		});
 
 	});
