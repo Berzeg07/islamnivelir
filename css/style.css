@@ -210,8 +210,32 @@ body {
 
 .time_of_prayer {
 	width: 199px;
+	height: 392px;
+	background: url(../img/prayer-time.png) no-repeat;
 	margin-top: 60px;
 	margin: 60px auto 0px;
+	padding: 35px 15px;
+}
+
+.time_of_prayer p{
+	font-family: 'RobotoSlab-Bold';
+	font-size: 20px;
+	color: #660066;
+	text-align: center;
+	padding-bottom: 8px;
+}
+
+.time_of_prayer li{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+	font-family: 'Roboto-Slab-Regular';
+	font-size: 16px;
+	color: #660066;
+}
+
+.time_of_prayer .active{
+	color: #ff6600;
 }
 
 @media only screen and (min-width:992px) {
@@ -279,7 +303,15 @@ body {
 	font-family: 'RobotoSlab-Bold';
 	font-size: 20px;
 	letter-spacing: -2.4px;
-	line-height: 36px;
+	line-height: 22px;	
+	padding-top: 20px;
+}
+
+@media only screen and (min-width:768px){
+	#slider .item p:first-child {
+		padding-top: 0;
+		line-height: 36px;
+	}
 }
 
 #slider .item p:last-child {
@@ -370,6 +402,7 @@ body {
 .video_main {
 	max-width: 587px;
 	width: 100%;
+	margin: 0 auto;
 }
 
 .video_min {
@@ -377,7 +410,7 @@ body {
 	display: none;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:992px) {
 	.video_min {
 		display: block;
 	}
@@ -398,7 +431,13 @@ body {
 .articles ul {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
+}
+
+@media only screen and (min-width:880px) {
+	.articles ul {
+		justify-content: space-between;
+	}
 }
 
 @media only screen and (min-width:768px) {
@@ -464,7 +503,6 @@ body {
 }
 
 /* sidebar */
-
 .sidebar {
 	max-width: 285px;
 	width: 100%;
@@ -552,9 +590,16 @@ h2, h1 {
 }
 
 /* footer */
-
 footer {
 	padding: 23px 0px 30px;
+	text-align: center;
+}
+
+@media only screen and (min-width:768px) {
+	footer {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 footer p {
